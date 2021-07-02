@@ -18,14 +18,14 @@ from win32api import GetSystemMetrics
 import requests
 import pywhatkit as kit
 import json
-import tkinter as tk
 import time
+import keyboard
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
-
+webbrowser.register('chrome', None, webbrowser.BackgroundBrowser("C://Program Files (x86)//Google//Chrome//Application//chrome.exe"))
 
 # ---------- main caller function section ----------
 
@@ -79,7 +79,61 @@ def weather(city):
  
     else:
         print(" City Not Found !!!")
+
+
+# ---------- Social Media Bot section ----------
+
+# create audio record file
+def record_msg():
     
+    freq = 44100
+    duration = 10
+    
+    # record audio file
+    print("recording message...")
+    recording = sd.rec(int(duration * freq), samplerate = freq, channels = 2)
+    sd.wait()
+    write("msg.wav", freq, recording)
+    wv.write("msg.wav", recording, freq, sampwidth = 2)
+    talk("done recording...")
+    sd.stop()
+
+def fb_message(contact, message):
+    browser = "chrome"
+    url = "https://www.facebook.com/"
+    webbrowser.get(browser).open_new(url)
+    time.sleep(10)
+    pyautogui.click(x=1732, y=160)
+    time.sleep(2)
+    pyautogui.click(x=1540, y=292)
+    time.sleep(2)
+    keyboard.write(contact)
+    time.sleep(2)
+    pyautogui.click(x=1586, y=350)
+    time.sleep(2)
+    pyautogui.click(x=1615, y=993)
+    time.sleep(0.5)
+    keyboard.write(message)
+    time.sleep(0.5)
+    pyautogui.press('enter')
+
+def wp_message(contact, message):
+    browser = "chrome"
+    url = "https://web.whatsapp.com/"
+    webbrowser.get(browser).open_new(url)
+    time.sleep(10)
+    pyautogui.click(x=356, y=258)
+    time.sleep(0.5)
+    keyboard.write(contact)
+    time.sleep(2)
+    pyautogui.click(x=312, y=420)
+    time.sleep(0.5)
+    pyautogui.click(x=1174, y=972)
+    time.sleep(0.5)
+    keyboard.write(message)
+    time.sleep(0.5)
+    pyautogui.press('enter')
+
 
 # ---------- news read section ----------
 
@@ -97,6 +151,14 @@ def news_read():
 
 
 # ---------- screen recorder definition section ----------
+
+def screen_shot():
+    img = pyautogui.screenshot()                    # Take screenshot using PyAutoGUI
+    frame = np.array(img)                           # Convert the screenshot to a numpy array            
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # Convert it from BGR(Blue, Green, Red) to # RGB(Red, Green, Blue)
+    time_stamp = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+    file_name = time_stamp + " ss.png"
+    cv2.imwrite(file_name, frame)
   
 def record_screen():
 
@@ -210,6 +272,40 @@ def run_ary():
             time = datetime.datetime.now().strftime('%I:%M %p')
             talk('Current time is ' + time)
 
+        elif 'send whatsapp message to' in command:
+            try:
+                contact = command.replace('send whatsapp message to ', '')
+                print("record your message for ", contact)
+                talk("record your message for "+contact)
+                record_msg()
+                filename = "msg.wav"
+                r = sr.Recognizer()
+                with sr.AudioFile(filename) as source:
+                    audio_data = r.record(source)
+                    message = r.recognize_google(audio_data)
+                    wp_message(contact, message)
+
+            except Exception as e:
+                print (e)
+                talk('Sorry!!! There was an error sending message')
+
+        elif 'send facebook message to' in command:
+            try:
+                contact = command.replace('send facebook message to ', '')
+                print("record your message for ", contact)
+                talk("record your message for "+contact)
+                record_msg()
+                filename = "msg.wav"
+                r = sr.Recognizer()
+                with sr.AudioFile(filename) as source:
+                    audio_data = r.record(source)
+                    message = r.recognize_google(audio_data)
+                    fb_message(contact, message)
+
+            except Exception as e:
+                print (e)
+                talk('Sorry!!! There was an error sending message')
+
         elif 'who is' in command:
             try:
                 person = command.replace('who is', '')
@@ -241,6 +337,9 @@ def run_ary():
 
         elif 'news today' in command:
             news_read()
+
+        elif 'take a screenshot' in command:
+            screen_shot()
 
         elif 'weather today in' in command or 'weather in' in command:
             try:
