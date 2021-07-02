@@ -1,0 +1,548 @@
+Python 3.9.6 [tags/v3.9.6:db3ff76, MSC v.1929 64 bit (AMD64)]
+Windows-10
+Module Index : Topics : Keywords
+    
+ 
+ 
+ 
+Index of Modules	 
+ 
+Built-in Modules
+      	 	
+_abc
+_ast
+_bisect
+_blake2
+_codecs
+_codecs_cn
+_codecs_hk
+_codecs_iso2022
+_codecs_jp
+_codecs_kr
+_codecs_tw
+_collections
+_contextvars
+_csv
+_datetime
+_functools
+_heapq
+_imp
+_io
+_json
+_locale
+_lsprof
+_md5
+_multibytecodec
+_opcode
+_operator
+_peg_parser
+_pickle
+_random
+_sha1
+_sha256
+_sha3
+_sha512
+_signal
+_sre
+_stat
+_statistics
+_string
+_struct
+_symtable
+_thread
+_tracemalloc
+_warnings
+_weakref
+_winapi
+_xxsubinterpreters
+array
+atexit
+audioop
+binascii
+builtins
+cmath
+errno
+faulthandler
+gc
+itertools
+marshal
+math
+mmap
+msvcrt
+nt
+parser
+sys
+time
+winreg
+xxsubtype
+zlib
+
+ 
+C:\Users\Asus\AppData\Local\Programs\Python\Python39
+      	 	
+
+ 
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\python39.zip
+      	 	
+
+ 
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\DLLs
+      	 	
+_asyncio
+_bz2
+_ctypes
+_ctypes_test
+_decimal
+_elementtree
+_hashlib
+_lzma
+_msi
+_multiprocessing
+_overlapped
+_queue
+_socket
+_sqlite3
+_ssl
+_testbuffer
+_testcapi
+_testconsole
+_testimportmultiple
+_testinternalcapi
+_testmultiphase
+_tkinter
+_uuid
+_zoneinfo
+pyexpat
+select
+unicodedata
+winsound
+
+ 
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\lib
+      	 	
+__future__
+_aix_support
+_bootlocale
+_bootsubprocess
+_collections_abc
+_compat_pickle
+_compression
+_markupbase
+_osx_support
+_py_abc
+_pydecimal
+_pyio
+_sitebuiltins
+_strptime
+_threading_local
+_weakrefset
+abc
+aifc
+antigravity
+argparse
+ast
+asynchat
+asyncio (package)
+asyncore
+base64
+bdb
+binhex
+bisect
+bz2
+cProfile
+calendar
+cgi
+cgitb
+chunk
+cmd
+code
+codecs
+codeop
+collections (package)
+colorsys
+compileall
+concurrent (package)
+configparser
+contextlib
+contextvars
+copy
+copyreg
+crypt
+csv
+ctypes (package)
+curses (package)
+dataclasses
+datetime
+dbm (package)
+decimal
+difflib
+dis
+distutils (package)
+doctest
+email (package)
+encodings (package)
+ensurepip (package)
+enum
+filecmp
+fileinput
+fnmatch
+formatter
+fractions
+ftplib
+functools
+genericpath
+getopt
+getpass
+gettext
+glob
+graphlib
+gzip
+hashlib
+heapq
+hmac
+html (package)
+http (package)
+idlelib (package)
+imaplib
+imghdr
+imp
+importlib (package)
+inspect
+io
+ipaddress
+json (package)
+keyword
+lib2to3 (package)
+linecache
+locale
+logging (package)
+lzma
+mailbox
+mailcap
+mimetypes
+modulefinder
+msilib (package)
+multiprocessing (package)
+netrc
+nntplib
+ntpath
+nturl2path
+numbers
+opcode
+operator
+optparse
+os
+pathlib
+pdb
+pickle
+pickletools
+pipes
+pkgutil
+platform
+plistlib
+poplib
+posixpath
+pprint
+profile
+pstats
+pty
+py_compile
+pyclbr
+pydoc
+pydoc_data (package)
+queue
+quopri
+random
+re
+reprlib
+rlcompleter
+runpy
+sched
+secrets
+selectors
+shelve
+shlex
+shutil
+signal
+site
+smtpd
+smtplib
+sndhdr
+socket
+socketserver
+sqlite3 (package)
+sre_compile
+sre_constants
+sre_parse
+ssl
+stat
+statistics
+string
+stringprep
+struct
+subprocess
+sunau
+symbol
+symtable
+sysconfig
+tabnanny
+tarfile
+telnetlib
+tempfile
+test (package)
+textwrap
+this
+threading
+timeit
+tkinter (package)
+token
+tokenize
+trace
+traceback
+tracemalloc
+tty
+turtle
+turtledemo (package)
+types
+typing
+unittest (package)
+urllib (package)
+uu
+uuid
+venv (package)
+warnings
+wave
+weakref
+webbrowser
+wsgiref (package)
+xdrlib
+xml (package)
+xmlrpc (package)
+zipapp
+zipfile
+zipimport
+zoneinfo (package)
+
+ 
+C:\Users\Asus\AppData\Local\Programs\Python\Python39
+      	 	
+
+ 
+C:\Users\Asus\AppData\Roaming\Python\Python39\site-packages
+      	 	
+IPython (package)
+PIL (package)
+_pyrsistent_version
+argon2 (package)
+async_generator (package)
+attr (package)
+backcall (package)
+bleach (package)
+colorama (package)
+cycler
+dateutil (package)
+debugpy (package)
+decorator
+defusedxml (package)
+entrypoints
+ipykernel (package)
+ipykernel_launcher
+ipython_genutils (package)
+ipywidgets (package)
+isympy
+jedi (package)
+jinja2 (package)
+jsonschema (package)
+jupyter
+jupyter_client (package)
+jupyter_console (package)
+jupyter_core (package)
+jupyterlab_pygments (package)
+jupyterlab_widgets (package)
+kiwisolver
+markupsafe (package)
+matplotlib (package)
+matplotlib_inline (package)
+mistune
+mpmath (package)
+nbclient (package)
+nbconvert (package)
+nbformat (package)
+nest_asyncio
+nose (package)
+notebook (package)
+numpy (package)
+pandas (package)
+pandocfilters
+parso (package)
+pickleshare
+prometheus_client (package)
+prompt_toolkit (package)
+pvectorc
+pygments (package)
+pylab
+pyrsistent (package)
+qtconsole (package)
+qtpy (package)
+scipy (package)
+send2trash (package)
+sympy (package)
+terminado (package)
+testpath (package)
+tornado (package)
+traitlets (package)
+wcwidth (package)
+webencodings (package)
+widgetsnbextension (package)
+winpty (package)
+zmq (package)
+
+ 
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\lib\site-packages
+      	 	
+_cffi_backend
+_distutils_hack (package)
+_portaudio
+_sounddevice
+_sounddevice_data (package)
+adodbapi (package)
+bs4 (package)
+certifi (package)
+cffi (package)
+chardet (package)
+comtypes (package)
+cv2 (package)
+docopt
+geojson (package)
+googlesearch (package)
+idna (package)
+isapi (package)
+js2py (package)
+lxml (package)
+mouseinfo (package)
+packaging (package)
+pafy (package)
+pip (package)
+pipwin (package)
+pkg_resources (package)
+playsound
+pySmartDL (package)
+pyaudio
+pyautogui (package)
+pycparser (package)
+pygetwindow (package)
+pyjokes (package)
+pyjokescli (package)
+pyjsparser (package)
+pymsgbox (package)
+pyowm (package)
+pyparsing
+pyperclip (package)
+pyprind (package)
+pyrect (package)
+pyscreeze (package)
+pythoncom
+pyttsx3 (package)
+pytweening (package)
+pytz (package)
+pywhatkit (package)
+requests (package)
+setuptools (package)
+six
+socks
+sockshandler
+sounddevice
+soupsieve (package)
+speech_recognition (package)
+test
+tzlocal (package)
+urllib3 (package)
+vlc
+wavio
+wikipedia (package)
+win32com (package)
+
+ 
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\lib\site-packages\win32
+      	 	
+_win32sysloader
+_winxptheme
+mmapfile
+odbc
+perfmon
+servicemanager
+timer
+win2kras
+win32api
+win32clipboard
+win32console
+win32cred
+win32crypt
+win32event
+win32evtlog
+win32file
+win32gui
+win32help
+win32inet
+win32job
+win32lz
+win32net
+win32pdh
+win32pipe
+win32print
+win32process
+win32profile
+win32ras
+win32security
+win32service
+win32trace
+win32transaction
+win32ts
+win32wnet
+winxpgui
+
+ 
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\lib\site-packages\win32\lib
+      	 	
+afxres
+commctrl
+dbi
+mmsystem
+netbios
+ntsecuritycon
+pywin32_bootstrap
+pywin32_testutil
+pywintypes
+rasutil
+regcheck
+regutil
+sspi
+sspicon
+win32con
+win32cryptcon
+win32evtlogutil
+win32gui_struct
+win32inetcon
+win32netcon
+win32pdhquery
+win32pdhutil
+win32rcparser
+win32serviceutil
+win32timezone
+win32traceutil
+win32verstamp
+winerror
+winioctlcon
+winnt
+winperf
+winxptheme
+
+ 
+C:\Users\Asus\AppData\Local\Programs\Python\Python39\lib\site-packages\Pythonwin
+      	 	
+dde
+pywin (package)
+win32ui
+win32uiole
+
+pydoc by Ka-Ping Yee<ping@lfw.org>
