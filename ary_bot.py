@@ -98,6 +98,23 @@ def record_msg():
     talk("done recording...")
     sd.stop()
 
+def insta_message(contact, message):
+    browser = "chrome"
+    url = "https://www.instagram.com/direct/inbox/"
+    webbrowser.get(browser).open_new(url)
+    time.sleep(10)
+    pyautogui.click(x=1161, y=720)
+    time.sleep(2)
+    keyboard.write(contact)
+    time.sleep(4)
+    pyautogui.click(x=910, y=441)
+    time.sleep(2)
+    pyautogui.click(x=1158, y=311)
+    time.sleep(2)
+    keyboard.write(message)
+    time.sleep(0.5)
+    pyautogui.press('enter')
+
 def fb_message(contact, message):
     browser = "chrome"
     url = "https://www.facebook.com/"
@@ -125,9 +142,9 @@ def wp_message(contact, message):
     pyautogui.click(x=356, y=258)
     time.sleep(0.5)
     keyboard.write(contact)
-    time.sleep(2)
+    time.sleep(4)
     pyautogui.click(x=312, y=420)
-    time.sleep(0.5)
+    time.sleep(2)
     pyautogui.click(x=1174, y=972)
     time.sleep(0.5)
     keyboard.write(message)
@@ -151,6 +168,16 @@ def news_read():
 
 
 # ---------- screen recorder definition section ----------
+
+def capture_cam():
+    videoCaptureObject = cv2.VideoCapture(0)
+    _, frame = videoCaptureObject.read()
+    time_stamp = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+    file_name = time_stamp + " recording.png"
+
+    cv2.imwrite(file_name, frame)
+    videoCaptureObject.release()
+    cv2.destroyAllWindows()
 
 def screen_shot():
     img = pyautogui.screenshot()                    # Take screenshot using PyAutoGUI
@@ -234,7 +261,11 @@ def run_ary():
 
         #conditional statement based on command recieved
         if 'how are you' in command:
-            talk("Hi user, how are you doing. Hope you doing fine")
+            talk("Hi user, I am fine. How are you doing? Hope you doing fine")
+        
+        elif 'who are you' in command or 'what is your name' in command or 'who made you' in command:
+            talk("Well I can tell you who made me. Ummmmmmm... Let me show you")
+            webbrowser.open_new("https://jrd19-aryan.github.io/jyotiraditya_1901/")
 
         elif 'hello world' in command:
             talk('The world is at Sharda University. Where are you?')
@@ -276,7 +307,7 @@ def run_ary():
             try:
                 contact = command.replace('send whatsapp message to ', '')
                 print("record your message for ", contact)
-                talk("record your message for "+contact)
+                talk("record your message for"+contact)
                 record_msg()
                 filename = "msg.wav"
                 r = sr.Recognizer()
@@ -293,7 +324,7 @@ def run_ary():
             try:
                 contact = command.replace('send facebook message to ', '')
                 print("record your message for ", contact)
-                talk("record your message for "+contact)
+                talk("record your message for"+contact)
                 record_msg()
                 filename = "msg.wav"
                 r = sr.Recognizer()
@@ -301,6 +332,23 @@ def run_ary():
                     audio_data = r.record(source)
                     message = r.recognize_google(audio_data)
                     fb_message(contact, message)
+
+            except Exception as e:
+                print (e)
+                talk('Sorry!!! There was an error sending message')
+
+        elif 'send insta message to' in command:
+            try:
+                contact = command.replace('send insta message to ', '')
+                print("record your message for ", contact)
+                talk("record your message for"+contact)
+                record_msg()
+                filename = "msg.wav"
+                r = sr.Recognizer()
+                with sr.AudioFile(filename) as source:
+                    audio_data = r.record(source)
+                    message = r.recognize_google(audio_data)
+                    insta_message(contact, message)
 
             except Exception as e:
                 print (e)
@@ -327,6 +375,20 @@ def run_ary():
             except Exception as e:
                 print (e)
                 talk("Sorry!!! We couldn't find what you asked for")
+
+        elif 'join the meet' in command or 'join in meet' in command:
+            try:
+                talk('enter meet code')
+                code = input('enter meet code: ')
+                url = "https://meet.google.com/"+code
+                talk("wait while you join the meet...")
+                webbrowser.get("chrome").open_new(url)
+                talk("have a nice day")
+                flag = False
+
+            except Exception as e:
+                print (e)
+                talk('Sorry!!! Unable to join the meet')
 
         elif 'date today' in command:
             talk(datetime.date.today())
@@ -358,6 +420,9 @@ def run_ary():
 
         elif 'record screen' in command or 'record my screen' in command:
             record_screen()
+
+        elif 'take my picture' in command or 'take my photo' in command or 'take a photo' in command:
+            capture_cam()
 
         elif 'bye' in command or 'good night' in command or 'see you' in command:
             talk("It's been a long day, without you my friend. And I'll tell you all about it when I see you again, Take Care...")
